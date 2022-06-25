@@ -251,10 +251,10 @@ window.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            const statusMessage = document.createElement('div');
-            statusMessage.classList.add('status');
-            statusMessage.textContent = message.loading;
-            form.append(statusMessage);
+            // const statusMessage = document.createElement('div');
+            // statusMessage.classList.add('status');
+            // statusMessage.textContent = message.loading;
+            // form.append(statusMessage);
 
             const request = new XMLHttpRequest();
             request.open('POST', 'server.php');
@@ -284,9 +284,10 @@ window.addEventListener('DOMContentLoaded', () => {
                     console.log(request.response);
                     showThanksModal(message.success);
                     form.reset();
-                    statusMessage.remove();
+                    // statusMessage.remove();
                 } else {
                     showThanksModal(message.failure);
+                    form.reset();
                 }
             });
         });
