@@ -114,7 +114,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const modalTrigger = document.querySelectorAll('[data-modal]'),
         modal = document.querySelector('.modal'),
-        modalCloseBtn = document.querySelector('[data-close]');
 
     function showModalByScroll() {
         if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
@@ -310,6 +309,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
         const thanksModal = document.createElement('div');
         thanksModal.classList.add('modal__dialog');
+        thanksModal.innerHTML = `
+            <div class="modal__content">
+                <div data-close class="modal__close">&times;</div>
+                <div class="modal__title">СПАСИБО!!!</div>
+            </div>
+        `;
 
     }
 
