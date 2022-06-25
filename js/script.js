@@ -307,6 +307,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
         prevModalDialog.classList.add('hide');
         openModal();
+
+        const thanksModal = document.createElement('div');
+        thanksModal.classList.add('modal__dialog');
+
     }
 
 });
