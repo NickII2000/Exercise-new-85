@@ -300,7 +300,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Fine forms
 
-    function showThanksModal() {
+    function showThanksModal(message) {
         const prevModalDialog = document.querySelector('.modal__dialog');
 
         prevModalDialog.classList.add('hide');
@@ -311,9 +311,11 @@ window.addEventListener('DOMContentLoaded', () => {
         thanksModal.innerHTML = `
             <div class="modal__content">
                 <div data-close class="modal__close">&times;</div>
-                <div class="modal__title">СПАСИБО!!!</div>
+                <div class="modal__title">${message}</div>
             </div>
         `;
+
+        document.querySelector('.modal').append(thanksModal);
 
     }
 
