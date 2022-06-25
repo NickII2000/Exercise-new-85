@@ -284,9 +284,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     console.log(request.response);
                     statusMessage.textContent = message.success;
                     form.reset();
-                    setTimeout(() => {
-                        statusMessage.remove();
-                    }, 2000);
+                    statusMessage.remove();
                 } else {
                     statusMessage.textContent = message.failure;
                     form.reset();
