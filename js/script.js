@@ -300,4 +300,13 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Fine forms
+
+    function showThanksModal() {
+        const prevModalDialog = document.querySelector('.modal__dialog');
+
+        prevModalDialog.classList.add('hide');
+        openModal();
+    }
+
 });
