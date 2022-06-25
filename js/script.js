@@ -321,6 +321,7 @@ window.addEventListener('DOMContentLoaded', () => {
             prevModalDialog.classList.remove('hide');
             closeModal();
         }, 4000);
+        // !!! решить вопрос, когда в thanksModal нажимаем "крестик"
 
     }
 
