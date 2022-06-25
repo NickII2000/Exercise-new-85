@@ -282,15 +282,11 @@ window.addEventListener('DOMContentLoaded', () => {
             request.addEventListener('load', () => {
                 if (request.status === 200) {
                     console.log(request.response);
-                    statusMessage.textContent = message.success;
+                    showThanksModal(message.success);
                     form.reset();
                     statusMessage.remove();
                 } else {
-                    statusMessage.textContent = message.failure;
-                    form.reset();
-                    setTimeout(() => {
-                        statusMessage.remove();
-                    }, 2000);
+                    showThanksModal(message.failure);
                 }
             });
         });
