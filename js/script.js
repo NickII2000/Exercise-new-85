@@ -137,10 +137,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function closeModal() {
 
-        if (document.querySelector('.modal__thanks')) {
-            prevModalDialog.classList.add('show');
-            prevModalDialog.classList.remove('hide');
-        }
+        // if (document.querySelector('.modal__thanks')) {
+        prevModalDialog.classList.add('show');
+        prevModalDialog.classList.remove('hide');
+        // }
 
         modal.classList.add('hide');
         modal.classList.remove('show');
@@ -300,6 +300,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 } else {
                     showThanksModal(message.failure);
                     form.reset();
+                    statusMessage.remove();
                 }
             });
         });
