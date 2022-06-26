@@ -136,12 +136,6 @@ window.addEventListener('DOMContentLoaded', () => {
     modalTrigger.forEach(btn => btn.addEventListener('click', openModal));
 
     function closeModal() {
-
-        // if (document.querySelector('.modal__thanks')) {
-        prevModalDialog.classList.add('show');
-        prevModalDialog.classList.remove('hide');
-        // }
-
         modal.classList.add('hide');
         modal.classList.remove('show');
         // modal.classList.toggle('show');
@@ -309,27 +303,26 @@ window.addEventListener('DOMContentLoaded', () => {
     // Fine forms
 
     function showThanksModal(message) {
+        const prevModalDialog = document.querySelector('.modal__dialog');
 
         prevModalDialog.classList.add('hide');
-        prevModalDialog.classList.remove('show');
         openModal();
 
         const thanksModal = document.createElement('div');
-        thanksModal.classList.add('modal__dialog', 'modal__thanks');
+        thanksModal.classList.add('modal__dialog');
         thanksModal.innerHTML = `
             <div class="modal__content">
-                <div data-close class="modal__close">&times;</div>
+                <div class="modal__close" data-close>×</div>
                 <div class="modal__title">${message}</div>
             </div>
         `;
-
         document.querySelector('.modal').append(thanksModal);
         setTimeout(() => {
             thanksModal.remove();
+            prevModalDialog.classList.add('show');
+            prevModalDialog.classList.remove('hide');
             closeModal();
         }, 2000);
-        // !!! решить вопрос, когда в thanksModal нажимаем "крестик"
-
     }
 
 });
