@@ -311,6 +311,7 @@ window.addEventListener('DOMContentLoaded', () => {
     function showThanksModal(message) {
 
         prevModalDialog.classList.add('hide');
+        prevModalDialog.classList.remove('show');
         openModal();
 
         const thanksModal = document.createElement('div');
