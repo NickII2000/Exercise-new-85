@@ -327,7 +327,7 @@ window.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             thanksModal.remove();
             closeModal();
-        }, 14000);
+        }, 2000);
         // !!! решить вопрос, когда в thanksModal нажимаем "крестик"
 
     }
