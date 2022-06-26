@@ -248,7 +248,7 @@ window.addEventListener('DOMContentLoaded', () => {
         failure: 'Что-то пошло не так...'
     };
 
-    console.log(forms);
+    console.dir(forms);
 
     forms.forEach(item => {
         postData(item);
