@@ -113,7 +113,8 @@ window.addEventListener('DOMContentLoaded', () => {
     // Modal
 
     const modalTrigger = document.querySelectorAll('[data-modal]'),
-        modal = document.querySelector('.modal');
+        modal = document.querySelector('.modal'),
+        prevModalDialog = document.querySelector('.modal__dialog');
 
     function showModalByScroll() {
         if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight) {
@@ -135,6 +136,12 @@ window.addEventListener('DOMContentLoaded', () => {
     modalTrigger.forEach(btn => btn.addEventListener('click', openModal));
 
     function closeModal() {
+
+        if (document.querySelector('.modal__thanks')) {
+            prevModalDialog.classList.add('show');
+            prevModalDialog.classList.remove('hide');
+        }
+
         modal.classList.add('hide');
         modal.classList.remove('show');
         // modal.classList.toggle('show');
@@ -300,13 +307,12 @@ window.addEventListener('DOMContentLoaded', () => {
     // Fine forms
 
     function showThanksModal(message) {
-        const prevModalDialog = document.querySelector('.modal__dialog');
 
         prevModalDialog.classList.add('hide');
         openModal();
 
         const thanksModal = document.createElement('div');
-        thanksModal.classList.add('modal__dialog');
+        thanksModal.classList.add('modal__dialog', 'modal__thanks');
         thanksModal.innerHTML = `
             <div class="modal__content">
                 <div data-close class="modal__close">&times;</div>
@@ -317,8 +323,6 @@ window.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.modal').append(thanksModal);
         setTimeout(() => {
             thanksModal.remove();
-            prevModalDialog.classList.add('show');
-            prevModalDialog.classList.remove('hide');
             closeModal();
         }, 4000);
         // !!! решить вопрос, когда в thanksModal нажимаем "крестик"
